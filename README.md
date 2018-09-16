@@ -20,18 +20,12 @@ If you're writing a package for LLVM, see `docs/Packaging.rst` for our
 suggestions.
 
 
-RISC-V LLVM Support [![Build Status](https://travis-ci.org/riscv/riscv-llvm.svg?branch=riscv-trunk)](https://travis-ci.org/riscv/riscv-llvm)
+RISC-V LLVM Support [![Build Status] ]
 --------------------------------------------------------
-
-Author  : Colin Schmidt (colins@eecs.berkeley.edu)  
-Date    : February 24, 2014  
-Version : (under version control)  
-
 
 This repository contains a new target for LLVM RISC-V. It supports the latest
 version of the ISA 2.0. This backend currently only supports assembly generation
 and riscv64-unknown-\*-gcc must be used to assemble and link the executable. The
-[RISCV](https://github.com/riscv/riscv-llvm/tree/RISCV) branch is based on LLVM 3.3 and, the 
 [riscv-trunk](https://github.com/riscv/riscv-llvm/tree/riscv-trunk) branch is following upstream LLVM master.
 
 The backend is structured similarly to most other LLVM backends and tries to use 
@@ -66,13 +60,12 @@ Installation
 
 The LLVM RISCV backend is built just as the normal LLVM system.
 
-	$ git clone -b RISCV https://github.com/riscv/riscv-llvm.git
-	$ git submodule update --init
+	$ git clone https://github.com/Franderg/riscv-llvm.git
 	$ mkdir build
 	$ cd build
-  $ cmake -DCMAKE_INSTALL_PREFIX=/opt/riscv -DLLVM_TARGETS_TO_BUILD="RISCV" ../
-  $ make
-  $ make install
+	$ cmake -DCMAKE_INSTALL_PREFIX=/opt/riscv -DLLVM_TARGETS_TO_BUILD="RISCV" ../
+	$ make
+	$ make install
 
 Now if `/opt/riscv` is on your path you should be able to use clang and LLVM with
 RISC-V support.
