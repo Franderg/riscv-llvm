@@ -19,8 +19,7 @@ documentation setup.
 If you're writing a package for LLVM, see `docs/Packaging.rst` for our
 suggestions.
 
-
-RISC-V LLVM Support [![Build Status] (https://travis-ci.org/riscv/riscv-llvm.svg?branch=riscv-trunk)] (https://travis-ci.org/riscv/riscv-llvm)
+RISC-V LLVM Support [![Build Status](https://travis-ci.org/riscv/riscv-llvm.svg?branch=riscv-trunk)](https://travis-ci.org/riscv/riscv-llvm)
 --------------------------------------------------------
 
 This repository contains a new target for LLVM RISC-V. It supports the latest
