@@ -1,5 +1,7 @@
 # riscv-llvm
-Backend de un compilador basado en arquitectura RISC-V
+Backend compiler based in RISC-V
+
+Original project in: https://github.com/ucb-bar/esp-llvm/tree/riscv-trunk
 
 Low Level Virtual Machine (LLVM)
 ======================================================
@@ -22,10 +24,7 @@ suggestions.
 RISC-V LLVM Support [![Build Status](https://travis-ci.com/Franderg/riscv-llvm.svg?branch=master)](https://travis-ci.com/Franderg/riscv-llvm)
 --------------------------------------------------------
 
-This repository contains a new target for LLVM RISC-V. It supports the latest
-version of the ISA 2.0. This backend currently only supports assembly generation
-and riscv64-unknown-\*-gcc must be used to assemble and link the executable. The
-[riscv-trunk](https://github.com/riscv/riscv-llvm/tree/riscv-trunk) branch is following upstream LLVM master.
+This repository contains a new target for LLVM RISC-V. It supports a dynamic source version of the ISA. 
 
 The backend is structured similarly to most other LLVM backends and tries to use 
 the tablegen format as much as possible. The description of the instructions
@@ -44,16 +43,6 @@ nodes into single target instructions is also possible using C++ in
 the same file. In general `RISCVISelLowering.cpp` sets up the lowering based on
 the ISA and the specific subtargets features. 
 
-This backend does not include all features of a backend but is focused on 
-generating assembly in an extensible way such that adding new ISA extensions
-and using them should be relatively painless. As the RISC-V support develops
-the backend may provide more features.
-
-The compiler is fairly robust with similar performance to riscv64-unknown-\*-gcc, so it use
-in any and all projects is encouraged.
-
-Feedback and suggestions are welcome.
-
 Installation
 ------------------------------------------------------------------
 
@@ -68,19 +57,3 @@ The LLVM RISCV backend is built just as the normal LLVM system.
 
 Now if `/opt/riscv` is on your path you should be able to use clang and LLVM with
 RISC-V support.
-
-Use
---------------------------------------------------------------------
-
-Using the llvm-riscv is fairly simple to build a full executable however you
-need riscv64-unknown-\*-gcc to do the assembling and linking. An example of compiling hello
-world:
-
-	$ cat hello.c
-	#include <stdio.h>
-	int main() {
-	    printf("Hello World!\n");
-	}
-	$ clang -target riscv64 -mriscv=RV64IAMFD -S hello.c -o hello.S
-	$ riscv64-unknown-elf-gcc -o hello.riscv hello.S
-
