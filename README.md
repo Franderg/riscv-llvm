@@ -57,3 +57,16 @@ The LLVM RISCV backend is built just as the normal LLVM system.
 
 Now if `/opt/riscv` is on your path you should be able to use clang and LLVM with
 RISC-V support.
+
+
+RISC-V GNU Compiler Toolchain
+=============================
+
+[![Build Status](https://travis-ci.org/riscv/riscv-gnu-toolchain.svg?branch=master)](https://travis-ci.org/riscv/riscv-gnu-toolchain)
+
+This is the RISC-V C and C++ cross-compiler. It supports two build modes:
+a generic ELF/Newlib toolchain and a more sophisticated Linux-ELF/glibc
+toolchain.
+
+https://github.com/riscv/riscv-gnu-toolchain
+    
