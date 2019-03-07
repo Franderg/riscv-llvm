@@ -34,7 +34,7 @@ $ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
 $ cd riscv-gnu-toolchain
 $ ./configure --prefix=`pwd`/../_install --enable-multilib
 $ make -j`nproc`
-$ popd
+$ cd ..
 ```
 
 In case you need work with qemu
@@ -44,17 +44,17 @@ $ git clone https://github.com/riscv/riscv-qemu
 $ cd riscv-qemu
 $ ./configure --prefix=`pwd`/../_install --target-list=riscv64-linux-user,riscv32-linux-user
 $ make -j`nproc` install
-$ popd
+$ cd ..
 ```
 
 LLVM
 
 ```bash
-git clone https://github.com/sifive/riscv-llvm
-cd riscv-llvm
-mkdir _build
-cd _build
-cmake -G Ninja -DCMAKE_BUILD_TYPE="Release" \
+$ git clone https://github.com/sifive/riscv-llvm
+$ cd riscv-llvm
+$ mkdir _build
+$ cd _build
+$ cmake -G Ninja -DCMAKE_BUILD_TYPE="Release" \
   -DBUILD_SHARED_LIBS=True -DLLVM_USE_SPLIT_DWARF=True \
   -DCMAKE_INSTALL_PREFIX="../../_install" \
   -DLLVM_OPTIMIZED_TABLEGEN=True -DLLVM_BUILD_TESTS=False \
@@ -62,8 +62,8 @@ cmake -G Ninja -DCMAKE_BUILD_TYPE="Release" \
   -DLLVM_DEFAULT_TARGET_TRIPLE="riscv64-unknown-elf" \
   -DLLVM_TARGETS_TO_BUILD="" -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="RISCV" \
   ../llvm
-cmake --build . --target install
-popd
+$ cmake --build . --target install
+$ cd ..
 ```
 
 
