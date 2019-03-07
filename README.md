@@ -70,7 +70,7 @@ $ cd ..
 
 If you want can test with ``llc --version`` 
 
-![](/home/fgranados/LLVM-RISCV/images/llc.png)
+![](images/llc.png)
 
 ### Generate IR LLVM 
 
