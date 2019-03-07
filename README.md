@@ -27,6 +27,8 @@ $ mkdir _install
 $ export PATH=`pwd`/_install/bin:$PATH
 ```
 
+Alternative you can create folder in ``/opt/riscv`` 
+
 Prepare the riscv-toolchain
 
 ```bash
@@ -66,7 +68,9 @@ $ cmake --build . --target install
 $ cd ..
 ```
 
+If you want can test with ``llc --version`` 
 
+![](/home/fgranados/LLVM-RISCV/images/llc.png)
 
 ### Generate IR LLVM 
 
@@ -106,4 +110,3 @@ $ cd ..
    ```
 
    
-
