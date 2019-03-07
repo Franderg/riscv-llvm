@@ -68,9 +68,9 @@ $ cmake --build . --target install
 $ cd ..
 ```
 
-If you want can test with ``llc --version`` 
+If you want can test the versions of Clang and LLVM with `` clang --version`` and ``llc --version``  
 
-![](images/llc.png)
+![](images/llc.png) ![](images/clang.png)
 
 ### Generate IR LLVM 
 
