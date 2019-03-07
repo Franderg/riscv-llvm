@@ -72,12 +72,14 @@ $ cd ..
 
 1. Clang compile, the last number corresponds to the optimization level, it can take a value of 0,1,2 or 3.
 
+   For riscv32 use the flag ``--target=riscv32``, for riscv64 is not necessary.
+
+   To generate .ll file add ``-emit-llvm``
+
    ```bash
-   $ clang-version -S -emit-llvm file.c -O1
+   $ clang-version -S -emit-llvm file.c -O1 --target=riscv32
    $ clang-version file.c -o output
    ```
-
-   The first line generates a .ll file, corresponds a LLVM-IR, the second line a binary file.
 
 2. Run the program in both forms
 
@@ -97,4 +99,11 @@ $ cd ..
    $ llc-version file.ll -o file.s
    ```
 
-4. 
+4. Generate the binary for riscv
+
+   ```bash
+   $ riscv64-unknown-elf-gcc file.o -o output -march=rv32imac -mabi=ilp32
+   ```
+
+   
+
